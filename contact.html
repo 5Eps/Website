@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | 5-Epsilon</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="5-Epsilon home">
+            <span class="brand-mark">5ε</span>
+            <span>5-Epsilon</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <section class="contact-intro">
+            <p class="eyebrow">Contact</p>
+            <h1>Start a Conversation</h1>
+            <p>Reach out to connect with 5-Epsilon about prediction market trading, partnerships, or research.</p>
+        </section>
+
+        <section class="contact-panel">
+            <form class="contact-form" id="contactForm">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <button class="button button-primary" type="submit">Send Message</button>
+                <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const formNote = document.getElementById('formNote');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            formNote.textContent = 'Thanks for reaching out. We will be in touch shortly.';
+            form.reset();
+        });
+    </script>
+</body>
+</html>
